@@ -12,6 +12,9 @@
 
 ### Note
 
+This work was produced at and for the Australian National Phenome Centre,
+Murdoch University.
+
 The scripts and operations in this repository assume a specific directory
 structure, which has been partially masked or excluded when pushed to GitHub.
 Notably, there are a number of references to the `./data` and `./data/hmdb_xml`
@@ -25,7 +28,7 @@ directory, with the name `data_main.tsv`.
 
 The original purpose of the work was to provide more accurate representations
 of chemical formulae, given a list of HMDB IDs.  Further possibilities included
-colelcting additional data, such as taxonomic information, for later analysis,
+collecting additional data, such as taxonomic information, for later analysis,
 including frequencies and proportions of certain taxonomic representations.
 
 The data are provided in an XLSX spreadsheet, but were converted to TSV for
@@ -37,8 +40,8 @@ PubChem IDs are present.  PubChem IDs are ignored for the purpose of this
 investigation.
 
 The data are to be collected from HMDB with reference to the associated HMDB
-ID.  HMDB does not possess an API per se, but data can be collected en masse
-from the relevant XML documents, which are provided raw via the appopriate URL.
+ID.  HMDB does not possess an API per se, but data can be collected from the
+relevant XML documents, which are provided raw via the appropriate URL.
 
 
 ### Operations
@@ -53,8 +56,9 @@ The operations performed are broken into a handful of stages:
  3. Finding IDs present in the data and checking for repeats, and, if any,
     checking basic measurements to assess severity / level of concern
 
- 4. Collecting data for each chemical from the corresponding XML files, and
-    appending the data to (a copy of) the original input dataset
+ 4. Collecting data for each chemical from the corresponding XML files,
+    appending the data to (a copy of) the original input dataset, and saving
+    the new dataset as a TSV
 
 
 ### Results
