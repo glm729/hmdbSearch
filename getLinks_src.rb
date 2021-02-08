@@ -2,7 +2,7 @@
 
 # Function for getting an array of dummy variable names, appropriately padded
 def emptyHeader(len)
-  return((0...len).map{|i| %Q[v#{i.ljust(len.to_s.length, "0")}]})
+  return((0...len).map{|i| %Q[v#{i.rjust(len.to_s.length, "0")}]})
 end
 
 # Function for getting the header row from the data, if any, or otherwise
@@ -14,7 +14,7 @@ end
 
 # Function for converting a raw TSV document into a Ruby Hash object
 def tsvToHash(raw, header = true)
-  neat = raw.gsub(/\n$/, '').split(/\n/).map{|e| e.split(/\t/)}
+  neat = raw.gsub(/\r/, '').gsub(/\n$/, '').split(/\n/).map{|e| e.split(/\t/)}
   head = getHeader(neat, header)
   result = Hash.new()
   head.each_with_index do |h, i|
